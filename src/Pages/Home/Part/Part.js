@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../../Shared/Button/Button";
 
 const Part = (props) => {
   const { name, image, description, available, order, price } = props.part;
@@ -13,9 +12,9 @@ const Part = (props) => {
         <p className="text-sm font-semibold text-stone-600">{description}</p>
         <p className="text-lg text-orange-500">Available : {available}</p>
         <p className="text-lg text-orange-500">Minimum Order : {order}</p>
-        <p className="text-lg text-orange-500">Price : {price}</p>
-        <div className="flex justify-center">
-          <Button>Buy Now</Button>
+        <p className="text-lg text-orange-500">Price : ${price}</p>
+        <div className="flex justify-center my-2">
+          <button className="w-full bg-[#ffc801] py-3">Buy Now</button>
         </div>
       </div>
     </div>

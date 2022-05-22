@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Car Tire",
-    "image": "https://images.unsplash.com/photo-1554784798-4d0886da3e5d?ixlib=rb-1.2.1&raw_url=true&q=60&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500",
+    "name": "Car Battery",
+    "image": "https://o.remove.bg/downloads/31284330-61ce-4ed5-8dff-45e1a27e25bf/battery-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -10,8 +10,8 @@
   },
   {
     "id": 2,
-    "name": "Engine Oil Filter",
-    "image": "https://images.unsplash.com/photo-1527383418406-f85a3b146499?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870",
+    "name": "Car Alternator",
+    "image": "https://o.remove.bg/downloads/f941d09d-56f7-4a22-b363-a48c139535f7/alternator-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -19,8 +19,8 @@
   },
   {
     "id": 3,
-    "name": "Engine Motor",
-    "image": "https://images.unsplash.com/photo-1622062934364-496d0b8b6959?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031",
+    "name": "Car Steering",
+    "image": "https://o.remove.bg/downloads/5d227263-0a19-4b01-b854-4b44adccc5d3/steering-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -28,8 +28,8 @@
   },
   {
     "id": 4,
-    "name": "Recyle Motor",
-    "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032",
+    "name": "Car Headlight",
+    "image": "https://o.remove.bg/downloads/29d33e85-5e0a-465d-a3f3-1d398d967c02/headlight-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -37,8 +37,8 @@
   },
   {
     "id": 5,
-    "name": "Car Mirror",
-    "image": "https://images.unsplash.com/photo-1471412601832-f360947f6d68?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870",
+    "name": "Car Clutch",
+    "image": "https://o.remove.bg/downloads/815ab0fc-00b3-40f7-9ae9-06e5a9654ba2/clutch-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -46,8 +46,8 @@
   },
   {
     "id": 6,
-    "name": "Car Mirror",
-    "image": "https://images.unsplash.com/photo-1533219015935-bc2426895702?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870",
+    "name": "Car Radiator",
+    "image": "https://o.remove.bg/downloads/4ecb58d6-8e63-4df4-91e7-6782f6969983/radiator-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -55,8 +55,8 @@
   },
   {
     "id": 7,
-    "name": "HeadLights",
-    "image": "https://images.unsplash.com/photo-1601129181405-734c0d510074?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870",
+    "name": "Car Brake",
+    "image": "https://o.remove.bg/downloads/5330f479-7332-44f5-a384-f90f22d0685a/brake-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -64,8 +64,8 @@
   },
   {
     "id": 8,
-    "name": "Seats",
-    "image": "https://images.unsplash.com/photo-1584978591563-ee415441ea2b?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870",
+    "name": "Car Tyre",
+    "image": "https://o.remove.bg/downloads/916d7b24-a3ae-46e6-bc70-048017c2cef7/tyre-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -73,8 +73,8 @@
   },
   {
     "id": 9,
-    "name": "Seats",
-    "image": "https://images.unsplash.com/photo-1615467948352-cee2b1b09e11?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=401",
+    "name": "Car oil Engine",
+    "image": "https://o.remove.bg/downloads/7a16b856-b445-43e4-8e43-712f2f424764/chain-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -82,8 +82,8 @@
   },
   {
     "id": 10,
-    "name": "Brake",
-    "image": "https://images.unsplash.com/photo-1614165936283-4c1e7becb324?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464",
+    "name": "Car Engine",
+    "image": "https://o.remove.bg/downloads/31a845ba-ea00-4b81-baad-e7eaef524464/engine-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -91,8 +91,8 @@
   },
   {
     "id": 11,
-    "name": "Brake",
-    "image": "https://images.unsplash.com/photo-1601644904642-a993ab409a4a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870",
+    "name": "Oil Filter",
+    "image": "https://o.remove.bg/downloads/5d58a6fd-80a0-4685-9eea-750cb4391c2b/oil-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
@@ -100,8 +100,35 @@
   },
   {
     "id": 12,
-    "name": "While",
-    "image": "https://images.unsplash.com/photo-1589579234085-975ab7c409d2?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
+    "name": "Car Seat",
+    "image": "https://o.remove.bg/downloads/3c2d87e2-299d-468b-be33-6f7e2441ff5c/seat-removebg-preview.png",
+    "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
+    "available": "10k",
+    "order": "4k",
+    "price": "505"
+  },
+  {
+    "id": 13,
+    "name": "Car Door",
+    "image": "https://o.remove.bg/downloads/2821b8d6-59d4-4ee0-bc61-893ca93d6080/door-removebg-preview.png",
+    "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
+    "available": "10k",
+    "order": "4k",
+    "price": "505"
+  },
+  {
+    "id": 14,
+    "name": "Car Mirror",
+    "image": "https://o.remove.bg/downloads/30496826-a3d1-4242-adf9-6b331109ec70/glass-removebg-preview.png",
+    "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
+    "available": "10k",
+    "order": "4k",
+    "price": "505"
+  },
+  {
+    "id": 15,
+    "name": "Car Rear Bumper",
+    "image": "https://o.remove.bg/downloads/575ce934-3dae-4028-a746-2b7c5967023b/bumper-removebg-preview.png",
     "description": "A tire (American English) or tyre (British English) is a ring-shaped component that surrounds a wheel's rim to transfer",
     "available": "10k",
     "order": "4k",
