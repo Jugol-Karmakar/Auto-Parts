@@ -39,8 +39,8 @@ const SignIn = () => {
         <div className="card-body">
           <h2 className="text-center text-3xl font-bold">Sign In</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
                 <span className="label-text font-bold text-gray-600">
                   Email
                 </span>
@@ -58,9 +58,9 @@ const SignIn = () => {
                 })}
                 type="email"
                 placeholder="Email Address"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
               />
-              <label class="label">
+              <label className="label">
                 {errors.email?.type === "required" && (
                   <span className="label-text-alt text-red-600">
                     {errors.email.message}
@@ -73,8 +73,8 @@ const SignIn = () => {
                 )}
               </label>
             </div>
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
                 <span className="label-text font-bold text-gray-600">
                   Password
                 </span>
@@ -96,9 +96,9 @@ const SignIn = () => {
                 })}
                 type="password"
                 placeholder="Password"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
               />
-              <label class="label">
+              <label className="label">
                 {errors.password?.type === "required" && (
                   <span className="label-text-alt text-red-600">
                     {errors.password.message}
@@ -123,7 +123,7 @@ const SignIn = () => {
               className="w-full bg-[#e43315] hover:bg-[#e25036] text-lg text-white font-bold py-3 rounded-lg cursor-pointer"
             />
           </form>
-          <div class="divider">OR</div>
+          <div className="divider">OR</div>
           <SocialLogin></SocialLogin>
         </div>
       </div>
