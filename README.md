@@ -2,71 +2,29 @@
 
 ## [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app).
 
-### [Live Site Link](https://github.com/facebook/create-react-app).
+### [Cilck Here to live site link](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Project Describe
 
-In the project directory, you can run:
+In this Project Manufacture Auto tools and Parts and booking any auto parts and delete and manage product. system and how product delete and update all data ar sava database maintain server side .This manufacturer parts site create admin and if admin want any user replace to admin and product buy payment system. This project create dashboard and any user and item ,add review and user own profile and update and change user information and user use dashboard and se all data to add,post or delete and payment product .in this project focus server side and get, post, put and delete method and jwttoken.
 
-### `npm start`
+## Works Done :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- A simple Website manufacture store and service.
+- Using dynamic route
+- Email Password Verification and Firebase authentication
+- Using private route Require Auth
+- using react icons.
+- using daisyui component.
+- React toastify using and pop up user login or logout
+- React CustomLink and use React Hooks
+- This project using React Hooks Form and handel Error
+- Site are responsive and host firebse deploy
+- Hosting Firebase Deploy and Create a Link
+- Use Tailwind css and React Firebase Hooks
+- And this project focus server side and use database mongoDB
+- Live server Authentication and email password verify
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Site Perfomance
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- This Project Using React and tailwind css and use react all Tenchnology and Component and libraries and site Performance and very good .Its very fast and i Think user Expriance are very good.
