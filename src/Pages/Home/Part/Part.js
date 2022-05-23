@@ -18,7 +18,6 @@ const Part = (props) => {
           <span className="flex items-center text-2xl ml-2">
             <HiOutlineCurrencyBangladeshi /> {price}
           </span>{" "}
-          <sub> /MRP</sub>
           <span className="text-sky-900 ml-2">(Per Unit)</span>
         </p>
         <div className="flex justify-center my-2">
