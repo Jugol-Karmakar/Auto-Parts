@@ -23,7 +23,7 @@ const Hero = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn bg-[#ffc801] px-8 rounded-full border-0 font-bold  hover:bg-[#ebbb0d]">
+          <button className="btn bg-blue-600 px-8 rounded-full border-0 font-bold  hover:bg-blue-700">
             Purchase Now
           </button>
         </div>

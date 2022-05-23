@@ -1,10 +1,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Rating from "../../Shared/Rating/Rating";
 
 const Reviews = () => {
   const users = [
@@ -44,6 +45,51 @@ const Reviews = () => {
         "I've been working with car for over a year now and they are the best company. All their products are good, and they are always willing to help. The thing I would say they need to work on is their customer service because sometimes it can be a little slow.",
       email: "david@gmail.com",
     },
+    {
+      id: 5,
+      name: "david miller",
+      image:
+        "https://images.unsplash.com/photo-1555617171-a072c97e09a7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
+      review:
+        "I've been working with car for over a year now and they are the best company. All their products are good, and they are always willing to help. The thing I would say they need to work on is their customer service because sometimes it can be a little slow.",
+      email: "david@gmail.com",
+    },
+    {
+      id: 6,
+      name: "david miller",
+      image:
+        "https://images.unsplash.com/photo-1555617171-a072c97e09a7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
+      review:
+        "I've been working with car for over a year now and they are the best company. All their products are good, and they are always willing to help. The thing I would say they need to work on is their customer service because sometimes it can be a little slow.",
+      email: "david@gmail.com",
+    },
+    {
+      id: 7,
+      name: "david miller",
+      image:
+        "https://images.unsplash.com/photo-1555617171-a072c97e09a7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
+      review:
+        "I've been working with car for over a year now and they are the best company. All their products are good, and they are always willing to help. The thing I would say they need to work on is their customer service because sometimes it can be a little slow.",
+      email: "david@gmail.com",
+    },
+    {
+      id: 8,
+      name: "david miller",
+      image:
+        "https://images.unsplash.com/photo-1555617171-a072c97e09a7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
+      review:
+        "I've been working with car for over a year now and they are the best company. All their products are good, and they are always willing to help. The thing I would say they need to work on is their customer service because sometimes it can be a little slow.",
+      email: "david@gmail.com",
+    },
+    {
+      id: 9,
+      name: "david miller",
+      image:
+        "https://images.unsplash.com/photo-1555617171-a072c97e09a7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387",
+      review:
+        "I've been working with car for over a year now and they are the best company. All their products are good, and they are always willing to help. The thing I would say they need to work on is their customer service because sometimes it can be a little slow.",
+      email: "david@gmail.com",
+    },
   ];
 
   return (
@@ -56,9 +102,9 @@ const Reviews = () => {
         amazing patients community.
       </p>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination]}
         spaceBetween={30}
-        slidesPerView={2}
+        slidesPerView={3}
         navigation
         pagination={{ clickable: true }}
         onSlideChange={() => console.log("slide change")}
@@ -71,21 +117,22 @@ const Reviews = () => {
         {users.map((user) => (
           <SwiperSlide key={user.id} className="swiper-wrapper">
             <div
-              className="swiper-slide swiper-slide-active px-20 flex flex-col items-center text-center"
-              style={{ width: "672px" }}
+              className="swiper-slide swiper-slide-active px-20 mb-20 flex items-center text-center"
+              style={{ width: "500px" }}
             >
-              <div className="w-20 h-20 rounded-full overflow-hidden inline-flex justify-center items-center my-3">
-                <img
-                  className="w-full h-ful object-cover"
-                  src={user.image}
-                  alt=""
-                />
+              <div class="card w-96 bg-base-100 shadow-xl">
+                <div class="avatar flex justify-center my-4">
+                  <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <img src="https://api.lorem.space/image/face?hash=3174" />
+                  </div>
+                </div>
+                <div class="card-body items-center text-center">
+                  <p className="text-sm">{user.review}</p>
+                  <Rating />
+                  <h2 class="card-title">{user.name}</h2>
+                  <p>{user.email}</p>
+                </div>
               </div>
-              <p className="text-center my-2">{user.review}</p>
-              <h4 className="mt-5 text-xl text-cyan-400 font-medium">
-                {user.name}
-              </h4>
-              <p className="text-sm text-neutral-600">{user.email}</p>
             </div>
           </SwiperSlide>
         ))}

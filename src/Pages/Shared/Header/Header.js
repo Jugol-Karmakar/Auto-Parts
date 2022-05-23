@@ -55,7 +55,7 @@ const Header = () => {
           Portfolio
         </CustomLink>
         <CustomLink
-          className="my-5 mr-5 flex items-center px-6 text-white text-lg font-semibold bg-blue-600 py-2 rounded-full "
+          className="my-5 mr-5 flex items-center px-6 text-white text-lg font-semibold bg-blue-600 hover:bg-blue-700 py-2 rounded-full "
           to="/signin"
         >
           <FaSignInAlt className="mr-2" />
