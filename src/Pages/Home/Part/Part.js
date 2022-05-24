@@ -1,8 +1,15 @@
 import React from "react";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 
 const Part = (props) => {
-  const { name, image, description, available, order, price } = props.part;
+  const { _id, name, image, description, available, order, price } = props.part;
+  const navigate = useNavigate();
+
+  const purchaseParts = (id) => {
+    navigate(`/purchase/${id}`);
+  };
+
   return (
     <div className="shadow-lg overflow-hidden rounded-lg">
       <div className="w-full h-72 p-5">
@@ -25,7 +32,10 @@ const Part = (props) => {
         </p>
 
         <div className="flex justify-center my-2">
-          <button className="w-full bg-blue-600 py-3 font-bold uppercase hover:bg-blue-700 text-white">
+          <button
+            onClick={() => purchaseParts(_id)}
+            className="w-full bg-blue-600 py-3 font-bold uppercase hover:bg-blue-700 text-white"
+          >
             Buy Now
           </button>
         </div>

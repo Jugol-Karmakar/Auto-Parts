@@ -120,16 +120,16 @@ const Reviews = () => {
               className="swiper-slide swiper-slide-active px-20 mb-20 flex items-center text-center"
               style={{ width: "500px" }}
             >
-              <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="avatar flex justify-center my-4">
-                  <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="avatar flex justify-center my-4">
+                  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                     <img src="https://api.lorem.space/image/face?hash=3174" />
                   </div>
                 </div>
-                <div class="card-body items-center text-center">
+                <div className="card-body items-center text-center">
                   <p className="text-sm">{user.review}</p>
                   <Rating />
-                  <h2 class="card-title">{user.name}</h2>
+                  <h2 className="card-title">{user.name}</h2>
                   <p>{user.email}</p>
                 </div>
               </div>

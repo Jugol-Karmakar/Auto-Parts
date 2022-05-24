@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { toast } from "react-toastify";
+import Loading from "../../Shared/Loading/Loading";
 
 const SignUp = () => {
   const {
@@ -23,6 +24,10 @@ const SignUp = () => {
 
   const navigate = useNavigate();
   let signInError;
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (error || updateError) {
     signInError = (
@@ -63,7 +68,7 @@ const SignUp = () => {
                   placeholder="Your Name"
                   className="input input-bordered w-full max-w-xs"
                 />
-                <label class="label">
+                <label className="label">
                   {errors.name?.type === "required" && (
                     <span className="label-text-alt text-red-600">
                       {errors.name.message}

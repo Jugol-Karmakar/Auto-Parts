@@ -7,7 +7,7 @@ import {
 import Loading from "../../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import auth from "../../../firebase.init";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const SignIn = () => {
@@ -22,10 +22,19 @@ const SignIn = () => {
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
+
+  const navigate = useNavigate();
+  const location = useLocation();
   let signInError;
 
+  const from = location.state?.from?.pathname || "/";
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
+
   if (loading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
 
   if (error) {

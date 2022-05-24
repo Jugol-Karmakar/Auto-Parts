@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import CustomLink from "../CustomLink/CustomLink";
-import { FaTimes, FaBars, FaSignInAlt } from "react-icons/fa";
+import { FaTimes, FaBars, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [user, loading] = useAuthState(auth);
+
+  const handelLogOut = () => {
+    signOut(auth);
+    toast("Sign Out Successfully!!");
+  };
 
   return (
     <div className="w-full px-10 flex justify-between items-center bg-white py-3 lg:py-0">
@@ -32,12 +42,6 @@ const Header = () => {
         </CustomLink>
         <CustomLink
           className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
-          to="/purchase"
-        >
-          Purchase
-        </CustomLink>
-        <CustomLink
-          className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
           to="/blog"
         >
           blog
@@ -54,13 +58,23 @@ const Header = () => {
         >
           Portfolio
         </CustomLink>
-        <CustomLink
-          className="my-5 mr-5 flex items-center px-6 text-white text-lg font-semibold bg-blue-600 hover:bg-blue-700 py-2 rounded-full "
-          to="/signin"
-        >
-          <FaSignInAlt className="mr-2" />
-          Sign In
-        </CustomLink>
+        {user ? (
+          <button
+            onClick={handelLogOut}
+            className="my-5 mr-5 flex items-center px-6 text-blue-600 text-lg font-semibold border border-blue-600 hover:bg-blue-700 hover:text-white py-2 rounded-full "
+          >
+            <FaSignOutAlt className="mr-2" />
+            Sign Up
+          </button>
+        ) : (
+          <CustomLink
+            className="my-5 mr-5 flex items-center px-6 text-white text-lg font-semibold bg-blue-600 hover:bg-blue-700 py-2 rounded-full "
+            to="/signin"
+          >
+            <FaSignInAlt className="mr-2" />
+            Sign In
+          </CustomLink>
+        )}
       </div>
     </div>
   );
