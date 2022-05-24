@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full px-10 flex justify-between items-center bg-white py-3 lg:py-0">
+    <div className="w-full px-10 flex justify-between items-center bg-white py-3 lg:py-0 shadow-lg">
       <div>
         <h1 className="text-3xl font-black">
           <span className="text-[#0989f1]">Auto</span>Parts

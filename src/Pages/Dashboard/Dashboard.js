@@ -3,25 +3,31 @@ import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto my-6">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
+        <div className="drawer-content bg-[#d1cbee] mx-6 rounded-2xl shadow-xl">
           <h2 className="text-4xl font-bold text-cyan-500">Dashboard</h2>
           <Outlet />
         </div>
         <div className="drawer-side">
-          <label for="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+          <ul className="menu p-4 overflow-y-auto w-80 bg-[#e9ecfc]  text-base-content rounded-2xl">
             {/* <!-- Sidebar content here --> */}
             <li>
-              <Link to="/dashboard">My Orders</Link>
+              <Link to="/dashboard" className="text-lg font-bold">
+                My Orders
+              </Link>
             </li>
             <li>
-              <Link to="/dashboard/addreview">Add Reviews</Link>
+              <Link to="/dashboard/addreview" className="text-lg font-bold">
+                Add Reviews
+              </Link>
             </li>
             <li>
-              <Link to="/dashboard/myrofile">My Profile</Link>
+              <Link to="/dashboard/myrofile" className="text-lg font-bold">
+                My Profile
+              </Link>
             </li>
           </ul>
         </div>

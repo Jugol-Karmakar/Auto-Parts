@@ -69,7 +69,7 @@ const Purchase = () => {
               name="name"
               value={user?.displayName}
               disabled
-              class="input input-bordered input-primary w-full mb-6"
+              className="input input-bordered input-primary w-full mb-6"
             />
 
             <input
@@ -77,25 +77,25 @@ const Purchase = () => {
               name="email"
               value={user?.email}
               disabled
-              class="input input-bordered input-primary w-full mb-6"
+              className="input input-bordered input-primary w-full mb-6"
             />
             <input
               type="text"
               name="address"
               placeholder="Address"
-              class="input input-bordered input-primary w-full mb-6"
+              className="input input-bordered input-primary w-full mb-6"
             />
             <input
               type="text"
               name="phone"
               placeholder="Phone Number"
-              class="input input-bordered input-primary w-full mb-6"
+              className="input input-bordered input-primary w-full mb-6"
             />
             <input
               type="text"
               name="quantity"
               placeholder="Quantity"
-              class="input input-bordered input-primary w-full mb-6"
+              className="input input-bordered input-primary w-full mb-6"
             />
             <input
               type="submit"
