@@ -17,6 +17,19 @@ const Purchase = () => {
       .then((data) => setPurchase(data));
   }, []);
 
+  // product booking
+  const handelBookngSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  fetch("http://localhost:5000/booking", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(),
+  });
+
   return (
     <div className="w-full bg-[#f6f7ff] ">
       <div className="container min-h-screen mx-auto p-10 flex flex-col lg:flex-row justify-around">
@@ -50,7 +63,7 @@ const Purchase = () => {
         </div>
         <div className="shadow-lg overflow-hidden rounded-lg max-w-md bg-white mt-6 lg:mt-0">
           <h2 className="text-center text-2xl py-3 font-bold">Purchase Now</h2>
-          <form className="mt-4 mx-10">
+          <form onSubmit={handelBookngSubmit} className="mt-4 mx-10">
             <input
               type="text"
               name="name"

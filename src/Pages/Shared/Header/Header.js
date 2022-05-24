@@ -48,23 +48,27 @@ const Header = () => {
         </CustomLink>
         <CustomLink
           className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
-          to="/contact"
-        >
-          Contact
-        </CustomLink>
-        <CustomLink
-          className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
           to="/portfolio"
         >
           Portfolio
         </CustomLink>
+
+        {user && (
+          <CustomLink
+            className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
+            to="/dashboard"
+          >
+            Dashboard
+          </CustomLink>
+        )}
+        {/* {user && <h1>{user?.displayName}</h1>} */}
         {user ? (
           <button
             onClick={handelLogOut}
             className="my-5 mr-5 flex items-center px-6 text-blue-600 text-lg font-semibold border border-blue-600 hover:bg-blue-700 hover:text-white py-2 rounded-full "
           >
             <FaSignOutAlt className="mr-2" />
-            Sign Up
+            Log Out
           </button>
         ) : (
           <CustomLink

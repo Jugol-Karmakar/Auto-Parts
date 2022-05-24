@@ -34,7 +34,7 @@ const Part = (props) => {
         <div className="flex justify-center my-2">
           <button
             onClick={() => purchaseParts(_id)}
-            className="w-full bg-blue-600 py-3 font-bold uppercase hover:bg-blue-700 text-white"
+            className="w-full bg-blue-600 py-3 font-bold uppercase hover:bg-blue-700 text-white rounded-full"
           >
             Buy Now
           </button>

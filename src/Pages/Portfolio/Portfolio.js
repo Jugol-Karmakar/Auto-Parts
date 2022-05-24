@@ -4,7 +4,7 @@ import jugol from "../../images/jugol.jpg";
 
 const Portfolio = () => {
   return (
-    <div className="w-full bg-[#f6f7ff] py-20">
+    <div className="w-full bg-[#e9ecfc] py-20">
       <div className="container mx-auto  shadow-xl rounded-3xl overflow-hidden">
         <div
           className="hero min-h-[500px]"

@@ -1,11 +1,12 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Rating from "../../Shared/Rating/Rating";
+import "swiper/css/navigation";
+
+import "./Review.css";
 
 const Reviews = () => {
   const users = [
@@ -93,51 +94,45 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="container mx-auto px-10 my-10">
-      <h2 className="text-center text-5xl text-cyan-400 font-bold my-3">
-        Testimonial And Review
-      </h2>
-      <p className="text-center w-1/2 mx-auto text-neutral-600">
-        See what our patients are saying to us. You can also be a part of our
-        amazing patients community.
-      </p>
+    <div className="container mx-auto px-20">
       <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={30}
         slidesPerView={3}
-        navigation
-        pagination={{ clickable: true }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        spaceBetween={30}
         slidesPerGroup={3}
         loop={true}
         loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
       >
-        {/* <SwiperSlide>Slide 4</SwiperSlide> */}
         {users.map((user) => (
-          <SwiperSlide key={user.id} className="swiper-wrapper">
-            <div
-              className="swiper-slide swiper-slide-active px-20 mb-20 flex items-center text-center"
-              style={{ width: "500px" }}
-            >
-              <div className="card w-96 bg-base-100 shadow-xl">
-                <div className="avatar flex justify-center my-4">
-                  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img src="https://api.lorem.space/image/face?hash=3174" />
-                  </div>
-                </div>
-                <div className="card-body items-center text-center">
-                  <p className="text-sm">{user.review}</p>
-                  <Rating />
-                  <h2 className="card-title">{user.name}</h2>
-                  <p>{user.email}</p>
+          <SwiperSlide key={user.id}>
+            <div class="card w-96 bg-base-100 shadow-xl my-6">
+              <figure>
+                <img
+                  src="https://api.lorem.space/image/shoes?w=400&h=225"
+                  alt="Shoes"
+                />
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title">
+                  Shoes!
+                  <div class="badge badge-secondary">NEW</div>
+                </h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                  <div class="badge badge-outline">Fashion</div>
+                  <div class="badge badge-outline">Products</div>
                 </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </div>
   );
 };
 
