@@ -1,14 +1,16 @@
 import React from "react";
 import {
   useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import SocialLogin from "../SocialLogin/SocialLogin";
+import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading/Loading";
+import useToken from "../../../Hooks/useToken";
 
 const SignUp = () => {
   const {
@@ -19,16 +21,23 @@ const SignUp = () => {
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+  const [token] = useToken(user || gUser);
 
   const navigate = useNavigate();
   let signInError;
 
-  if (loading) {
+  if (token) {
+    navigate("/");
+  }
+
+  if (loading || gLoading) {
     return <Loading />;
   }
 
-  if (error || updateError) {
+  if (error || gError || updateError) {
     signInError = (
       <p className="text-red-600">
         <small>{error?.message || updateError?.message}</small>
@@ -40,7 +49,6 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     toast("Sign Up Successfully!!");
-    navigate("/");
   };
 
   return (
@@ -161,7 +169,12 @@ const SignUp = () => {
               />
             </form>
             <div className="my-2">
-              <SocialLogin></SocialLogin>
+              <button
+                onClick={() => signInWithGoogle()}
+                className="btn border border-gray-400 hover:border-gray-400 w-full max-w-sm flex rounded-full items-center bg-white text-gray-700 hover:bg-green-50 font-bold"
+              >
+                <FcGoogle className="text-xl mr-2" /> Continue With Google
+              </button>
             </div>
           </div>
         </div>

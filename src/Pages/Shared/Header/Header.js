@@ -12,6 +12,7 @@ const Header = () => {
 
   const handelLogOut = () => {
     signOut(auth);
+    localStorage.removeItem("accessToken");
     toast("Log Out Successfully!!");
   };
 
