@@ -8,11 +8,11 @@ import { toast } from "react-toastify";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const handelLogOut = () => {
     signOut(auth);
-    toast("Sign Out Successfully!!");
+    toast("Log Out Successfully!!");
   };
 
   return (

@@ -14,7 +14,6 @@ const SignUp = () => {
   const {
     register,
     formState: { errors },
-    getValues,
     handleSubmit,
   } = useForm();
 
