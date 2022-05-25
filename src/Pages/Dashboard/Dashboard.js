@@ -6,8 +6,8 @@ const Dashboard = () => {
     <div className="container mx-auto my-6">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content bg-[#d1cbee] mx-6 rounded-2xl shadow-xl">
-          <h2 className="text-4xl font-bold text-cyan-500">Dashboard</h2>
+        <div className="drawer-content bg-[#edeafc] mx-6 rounded-2xl">
+          <h2 className="text-4xl font-bold text-gray-700 m-3">Dashboard</h2>
           <Outlet />
         </div>
         <div className="drawer-side">

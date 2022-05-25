@@ -1,9 +1,82 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const Addreview = () => {
+  const handelAddReview = (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const image = e.target.image.value;
+    const rating = e.target.rating.value;
+    const review = e.target.review.value;
+
+    const reviews = {
+      name,
+      email,
+      image,
+      rating,
+      review,
+    };
+
+    fetch("http://localhost:5000/review", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reviews),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast("Reviews Add Successfully");
+      });
+  };
+
   return (
     <div>
-      <h2>hello</h2>
+      <h2 className="text-center text-2xl font-bold my-2 text-gray-800">
+        Add a Review
+      </h2>
+      <div className="max-w-md mx-auto bg-white p-10 rounded-2xl">
+        <form onSubmit={handelAddReview} className="flex flex-col">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            className="input input-bordered input-primary w-full max-w-sm mb-4"
+          />
+          <input
+            className="input input-bordered input-primary w-full max-w-sm mb-4"
+            type="email"
+            name="email"
+            placeholder="Email Address"
+          />
+          <input
+            className="input input-bordered input-primary w-full max-w-sm mb-4"
+            type="text"
+            name="image"
+            placeholder="image"
+          />
+          <input
+            className="input input-bordered input-primary w-full max-w-sm mb-4"
+            type="text"
+            name="rating"
+            placeholder="Rating"
+          />
+          <textarea
+            type="text"
+            name="review"
+            className="textarea textarea-primary mb-4"
+            placeholder="Review"
+          ></textarea>
+          <input
+            className="bg-blue-600 rounded-lg font-semibold text-white cursor-pointer py-3"
+            type="submit"
+            value="Add Review"
+          />
+        </form>
+      </div>
     </div>
   );
 };

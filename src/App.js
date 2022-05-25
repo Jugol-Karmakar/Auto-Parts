@@ -14,6 +14,8 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Myorders from "./Pages/Dashboard/Myorders";
 import Addreview from "./Pages/Dashboard/Addreview";
 import Myprofile from "./Pages/Dashboard/Myprofile";
+import Notfound from "./Pages/Notfound/Notfound";
+import Blog from "./Pages/Blog/Blog";
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/parts" element={<Parts></Parts>}></Route>
         <Route
           path="/purchase/:id"
@@ -45,6 +48,7 @@ function App() {
         </Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route path="*" element={<Notfound></Notfound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
