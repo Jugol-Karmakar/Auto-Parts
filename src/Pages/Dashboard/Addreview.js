@@ -19,7 +19,7 @@ const Addreview = () => {
       review,
     };
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://limitless-sea-40851.herokuapp.com/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,29 +44,34 @@ const Addreview = () => {
             type="text"
             name="name"
             placeholder="Name"
+            required
             className="input input-bordered input-primary w-full max-w-sm mb-4"
           />
           <input
             className="input input-bordered input-primary w-full max-w-sm mb-4"
             type="email"
             name="email"
+            required
             placeholder="Email Address"
           />
           <input
             className="input input-bordered input-primary w-full max-w-sm mb-4"
             type="text"
             name="image"
+            required
             placeholder="image"
           />
           <input
             className="input input-bordered input-primary w-full max-w-sm mb-4"
             type="text"
             name="rating"
+            required
             placeholder="Rating"
           />
           <textarea
             type="text"
             name="review"
+            required
             className="textarea textarea-primary mb-4"
             placeholder="Review"
           ></textarea>

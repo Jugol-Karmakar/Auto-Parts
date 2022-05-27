@@ -17,7 +17,7 @@ const ProfileModal = () => {
       phone: e.target.phone.value,
     };
 
-    fetch("http://localhost:5000/profile", {
+    fetch("https://limitless-sea-40851.herokuapp.com/profile", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

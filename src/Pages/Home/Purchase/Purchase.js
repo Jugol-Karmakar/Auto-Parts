@@ -12,7 +12,7 @@ const Purchase = () => {
   const [purchase, setPurchase] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/parts/${id}`;
+    const url = `https://limitless-sea-40851.herokuapp.com/parts/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPurchase(data));
@@ -37,7 +37,7 @@ const Purchase = () => {
       quantity,
     };
 
-    fetch("http://localhost:5000/booking", {
+    fetch("https://limitless-sea-40851.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
