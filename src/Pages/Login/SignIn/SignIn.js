@@ -124,7 +124,7 @@ const SignIn = () => {
                       message: "Must be 6 characters or longer",
                     },
                     pattern: {
-                      value: /[A-Za-z]{3}/,
+                      value: /[A-Za-z]{2}/,
                       message: "one Uppercase,one Lowercase and one Number",
                     },
                   })}

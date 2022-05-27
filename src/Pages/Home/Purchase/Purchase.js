@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import { toast } from "react-toastify";
 
 const Purchase = () => {
   const { id } = useParams();
@@ -20,18 +21,38 @@ const Purchase = () => {
   // product booking
   const handelBookngSubmit = (e) => {
     e.preventDefault();
+    const name = user?.displayName;
+    const email = user?.email;
+    const product = purchase.name;
+    const address = e.target.address.value;
+    const phone = e.target.phone.value;
+    const quantity = e.target.quantity.value;
+
+    const booking = {
+      name,
+      email,
+      product,
+      address,
+      phone,
+      quantity,
+    };
+
+    fetch("http://localhost:5000/booking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast(`${product} purchase Successfully Done!!`);
+      });
   };
 
-  fetch("http://localhost:5000/booking", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(),
-  });
-
   return (
-    <div className="w-full bg-[#f6f7ff] ">
+    <div className="w-full bg-[#dfe2f7] ">
       <div className="container min-h-screen mx-auto p-10 flex flex-col lg:flex-row justify-around">
         <div className="shadow-lg overflow-hidden rounded-lg max-w-md bg-white">
           <div className="w-full h-72 p-5">
@@ -81,20 +102,31 @@ const Purchase = () => {
             />
             <input
               type="text"
+              name="product"
+              value={purchase.name}
+              disabled
+              className="input input-bordered input-primary w-full mb-6"
+            />
+            <input
+              type="text"
               name="address"
               placeholder="Address"
+              required
               className="input input-bordered input-primary w-full mb-6"
             />
             <input
               type="text"
               name="phone"
               placeholder="Phone Number"
+              required
               className="input input-bordered input-primary w-full mb-6"
             />
             <input
               type="text"
               name="quantity"
               placeholder="Quantity"
+              min={10}
+              max={20}
               className="input input-bordered input-primary w-full mb-6"
             />
             <input

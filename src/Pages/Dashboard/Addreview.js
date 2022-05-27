@@ -35,10 +35,10 @@ const Addreview = () => {
 
   return (
     <div>
-      <h2 className="text-center text-2xl font-bold my-2 text-gray-800">
+      <h2 className="ml-6 text-3xl font-bold my-2 text-blue-500">
         Add a Review
       </h2>
-      <div className="max-w-md mx-auto bg-white p-10 rounded-2xl">
+      <div className="max-w-sm mx-auto bg-white p-10 rounded-2xl my-5">
         <form onSubmit={handelAddReview} className="flex flex-col">
           <input
             type="text"
