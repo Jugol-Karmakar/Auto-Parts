@@ -17,6 +17,7 @@ import Myprofile from "./Pages/Dashboard/Myprofile";
 import Notfound from "./Pages/Notfound/Notfound";
 import Blog from "./Pages/Blog/Blog";
 import Users from "./Pages/Dashboard/Users";
+import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
 
 function App() {
   return (
@@ -46,7 +47,14 @@ function App() {
           <Route index element={<Myorders></Myorders>}></Route>
           <Route path="addreview" element={<Addreview></Addreview>}></Route>
           <Route path="myrofile" element={<Myprofile></Myprofile>}></Route>
-          <Route path="users" element={<Users></Users>}></Route>
+          <Route
+            path="users"
+            element={
+              <RequireAdmin>
+                <Users></Users>
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
