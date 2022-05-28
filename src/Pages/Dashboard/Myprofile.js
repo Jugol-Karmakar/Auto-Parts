@@ -11,31 +11,54 @@ const Myprofile = () => {
       <h2 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
         My Profile
       </h2>
-      <div className="ml-10">
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <div className="card-body">
+      <div className="m-10">
+        <div className="max-w-xl bg-slate-100 shadow-sm rounded-md">
+          <div className="flex justify-around p-8">
             <div>
-              <p className="text-left">Name</p>
-              <h2 className="">{user.displayName}</h2>
+              <div className="w-36 h-36 mb-12">
+                <img
+                  className="w-full h-full rounded-full object-cover"
+                  src={user?.photoURL}
+                />
+              </div>
+              <div>
+                <ProfileModal />
+              </div>
             </div>
+
             <div>
-              <p>Email</p>
-              <h2>{user.email}</h2>
-            </div>
-            <div>
-              <p>Euucation</p>
-              <h2>{}</h2>
-            </div>
-            <div>
-              <p>Address</p>
-              <h2>{}</h2>
-            </div>
-            <div>
-              <p>Phone</p>
-              <h2>{}</h2>
-            </div>
-            <div className="card-actions">
-              <ProfileModal />
+              <div className="mb-4">
+                <p className=" font-medium text-gray-600">Full Name</p>
+                <h2 className="text-left text-lg font-medium">
+                  {user.displayName}
+                </h2>
+              </div>
+              <div className="mb-4">
+                <p className="font-medium text-gray-600">Email</p>
+                <h2 className="text-left text-lg font-medium">{user.email}</h2>
+              </div>
+              <div className="mb-4">
+                <p className="font-medium text-gray-600">Education</p>
+                <h2 className="text-left text-lg font-medium">
+                  University Of Global Village
+                </h2>
+              </div>
+              <div className="mb-4">
+                <p className="text-lg font-medium text-gray-600">Address</p>
+                <h2 className="text-left text-xl font-medium">Barisal</h2>
+              </div>
+              <div className="mb-4">
+                <p className="font-medium text-gray-600">Phone</p>
+                <h2 className="text-left text-lg font-medium">019432835</h2>
+              </div>
+              <div className="mb-4">
+                <p className="font-medium text-gray-600">
+                  LinkedIn Profile Link
+                </p>
+                <h2 className="text-left text-lg font-medium">
+                  https//:ajkfififeiee
+                </h2>
+              </div>
             </div>
           </div>
         </div>

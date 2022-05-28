@@ -40,7 +40,7 @@ const Dashboard = () => {
             </li>
             <li>
               <Link
-                to="/dashboard/myrofile"
+                to="/dashboard/myprofile"
                 className="text-lg font-bold border border-blue-500 mb-2"
               >
                 My Profile

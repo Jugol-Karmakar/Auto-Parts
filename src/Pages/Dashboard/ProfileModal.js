@@ -26,17 +26,18 @@ const ProfileModal = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         toast("Update Your Profile");
       });
   };
 
   return (
-    <div className="z-30">
-      <label htmlFor="profile-modal" className="btn modal-button">
+    <div className="">
+      <label
+        htmlFor="profile-modal"
+        className="btn bg-blue-600 border-0 hover:bg-blue-700"
+      >
         Update Profile
       </label>
-
       <input type="checkbox" id="profile-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">

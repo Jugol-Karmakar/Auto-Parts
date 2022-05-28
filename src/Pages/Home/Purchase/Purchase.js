@@ -24,6 +24,7 @@ const Purchase = () => {
     const name = user?.displayName;
     const email = user?.email;
     const product = purchase.name;
+    const price = purchase.price;
     const address = e.target.address.value;
     const phone = e.target.phone.value;
     const quantity = e.target.quantity.value;
@@ -32,6 +33,7 @@ const Purchase = () => {
       name,
       email,
       product,
+      price,
       address,
       phone,
       quantity,

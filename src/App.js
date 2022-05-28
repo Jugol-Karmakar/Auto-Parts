@@ -13,11 +13,12 @@ import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Myorders from "./Pages/Dashboard/Myorders";
 import Addreview from "./Pages/Dashboard/Addreview";
-import Myprofile from "./Pages/Dashboard/Myprofile";
 import Notfound from "./Pages/Notfound/Notfound";
 import Blog from "./Pages/Blog/Blog";
 import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
+import Myprofile from "./Pages/Dashboard/Myprofile";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -46,7 +47,8 @@ function App() {
         >
           <Route index element={<Myorders></Myorders>}></Route>
           <Route path="addreview" element={<Addreview></Addreview>}></Route>
-          <Route path="myrofile" element={<Myprofile></Myprofile>}></Route>
+          <Route path="myprofile" element={<Myprofile></Myprofile>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="users"
             element={
