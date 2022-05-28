@@ -36,7 +36,7 @@ const Myorders = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold ml-3 text-purple-700 my-2">
+      <h2 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
         My Orders : {bookings.length}
       </h2>
       <div className="overflow-x-auto mx-3">

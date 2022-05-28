@@ -22,7 +22,9 @@ const Users = () => {
 
   return (
     <div>
-      <h2>hello user {users.length}</h2>
+      <h2 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
+        All Users : {users.length}
+      </h2>
       <div className="overflow-x-auto mx-3">
         <table className="table w-full">
           <thead>
