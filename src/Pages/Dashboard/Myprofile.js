@@ -4,7 +4,7 @@ import auth from "../../firebase.init";
 import ProfileModal from "./ProfileModal";
 
 const Myprofile = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   return (
     <div>
