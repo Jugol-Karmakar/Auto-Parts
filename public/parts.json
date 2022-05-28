@@ -9,7 +9,7 @@
   },
   {
     "name": "Car Alternator",
-    "image": "https://i.ibb.co/fxw2Pn0/alternator.png",
+    "image": "https://i.ibb.co/x7n9QJj/alternator.png",
     "description": "An alternator is a type of electric generator used in modern automobiles to charge the battery and to power the electrical system",
     "available": "1800",
     "order": "400",
@@ -17,7 +17,7 @@
   },
   {
     "name": "Car Steering",
-    "image": "https://i.ibb.co/YbXSKfH/steering.png",
+    "image": "https://i.ibb.co/gVcp5Rd/steering.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "1000",
     "order": "300",
@@ -25,7 +25,7 @@
   },
   {
     "name": "Car Headlight",
-    "image": "https://i.ibb.co/kQVC9TY/headlight.png",
+    "image": "https://i.ibb.co/Sy4Sn2G/headlight.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "2200",
     "order": "600",
@@ -33,7 +33,7 @@
   },
   {
     "name": "Car Clutch",
-    "image": "https://i.ibb.co/6Hyz2yK/clutch.png",
+    "image": "https://i.ibb.co/4SR8XjJ/clutch.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "1400",
     "order": "300",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Car Radiator",
-    "image": "https://i.ibb.co/PN6KVzp/radiator.png",
+    "image": "https://i.ibb.co/0t15Vh7/radiator.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "1500",
     "order": "400",
@@ -49,7 +49,7 @@
   },
   {
     "name": "Car Brake",
-    "image": "https://i.ibb.co/JcTfp3P/brake.png",
+    "image": "https://i.ibb.co/F5t7mMj/brake.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "3200",
     "order": "800",
@@ -57,7 +57,7 @@
   },
   {
     "name": "Car Tyre",
-    "image": "https://i.ibb.co/BC1RKhC/tyre.png",
+    "image": "https://i.ibb.co/yXDfCc3/tyre.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "2000",
     "order": "500",
@@ -65,7 +65,7 @@
   },
   {
     "name": "Car oil Engine",
-    "image": "https://i.ibb.co/9wMfsXg/oiling.png",
+    "image": "https://i.ibb.co/jWgrsR5/oiling.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "1000",
     "order": "300",
@@ -73,7 +73,7 @@
   },
   {
     "name": "Car Engine",
-    "image": "https://i.ibb.co/PDHFJjX/engine.png",
+    "image": "https://i.ibb.co/jWgrsR5/oiling.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "755",
     "order": "200",
@@ -81,7 +81,7 @@
   },
   {
     "name": "Oil Filter",
-    "image": "https://i.ibb.co/18L4p9N/filter.png",
+    "image": "https://i.ibb.co/8cFgqpm/filter.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "1500",
     "order": "400",
@@ -89,7 +89,7 @@
   },
   {
     "name": "Car Seat",
-    "image": "https://i.ibb.co/6ZnpBzx/seat.png",
+    "image": "https://i.ibb.co/4K2gL0R/seat.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "1500",
     "order": "600",
@@ -97,7 +97,7 @@
   },
   {
     "name": "Car Door",
-    "image": "https://i.ibb.co/Tt95Knh/door.png",
+    "image": "https://i.ibb.co/z54Ms3b/door.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "2400",
     "order": "800",
@@ -105,7 +105,7 @@
   },
   {
     "name": "Car Mirror",
-    "image": "https://i.ibb.co/42gtyRV/glass.png",
+    "image": "https://i.ibb.co/2sBvggf/glass.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "1300",
     "order": "400",
@@ -113,7 +113,7 @@
   },
   {
     "name": "Car Rear Bumper",
-    "image": "https://i.ibb.co/VxkDc80/bumper.png",
+    "image": "https://i.ibb.co/tJBrpQF/bumper.png",
     "description": "Passenger cars — A steering wheel is a type of steering control in vehicles. Passenger car steering wheels from different periods.",
     "available": "1000",
     "order": "400",

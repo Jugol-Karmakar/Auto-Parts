@@ -40,6 +40,30 @@ const Dashboard = () => {
             </li>
             <li>
               <Link
+                to="/dashboard/addproduct"
+                className="text-lg font-bold border border-blue-500 mb-2"
+              >
+                Add a Product
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard/manageorders"
+                className="text-lg font-bold border border-blue-500 mb-2"
+              >
+                Manage All Orders
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard/manageproduct"
+                className="text-lg font-bold border border-blue-500 mb-2"
+              >
+                Manage Product
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/dashboard/myprofile"
                 className="text-lg font-bold border border-blue-500 mb-2"
               >
