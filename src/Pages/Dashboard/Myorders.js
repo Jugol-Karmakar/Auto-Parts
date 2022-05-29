@@ -75,7 +75,10 @@ const Myorders = () => {
                     </Link>
                   )}
                   {book.price && book.paid && (
-                    <p className="font-bold text-green-600">Paid</p>
+                    <div>
+                      <p className="font-bold text-green-600">Paid</p>
+                      <p>{book.transaction}</p>
+                    </div>
                   )}
                 </td>
                 <td className="text-purple-500 font-semibold">
