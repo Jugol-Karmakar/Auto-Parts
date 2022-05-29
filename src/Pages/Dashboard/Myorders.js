@@ -39,7 +39,7 @@ const Myorders = () => {
       <h2 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
         My Orders : {bookings.length}
       </h2>
-      <div className="overflow-x-auto mx-3">
+      <div className="overflow-x-auto mx-3 my-6">
         <table className="table w-full">
           <thead>
             <tr>
@@ -50,6 +50,7 @@ const Myorders = () => {
               <th>Address</th>
               <th>Quantity</th>
               <th>Payment</th>
+              <th>Cancel</th>
             </tr>
           </thead>
           <tbody>
@@ -75,6 +76,13 @@ const Myorders = () => {
                   )}
                   {book.price && book.paid && (
                     <p className="font-bold text-green-600">Paid</p>
+                  )}
+                </td>
+                <td className="text-purple-500 font-semibold">
+                  {book.price && !book.paid && (
+                    <button className="btn btn-xs bg-red-600 border-0">
+                      Delete
+                    </button>
                   )}
                 </td>
               </tr>

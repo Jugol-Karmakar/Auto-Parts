@@ -25,7 +25,7 @@ const Users = () => {
       <h2 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
         All Users : {users.length}
       </h2>
-      <div className="overflow-x-auto mx-3">
+      <div className="overflow-x-auto mx-4 my-6">
         <table className="table w-full">
           <thead>
             <tr>
