@@ -9,18 +9,24 @@ const ProfileModal = () => {
   const handelUpdateProfile = (e) => {
     e.preventDefault();
 
+    const email = user.email;
+    const name = user.displayName;
+    const education = e.target.education.value;
+    const address = e.target.address.value;
+    const phone = e.target.phone.value;
+
     const profile = {
-      email: user.email,
-      name: user.displayName,
-      education: e.target.education.value,
-      address: e.target.address.value,
-      phone: e.target.phone.value,
+      email,
+      name,
+      education,
+      address,
+      phone,
     };
 
-    fetch(`http://localhost:5000/profile/${user}`, {
+    fetch(`https://limitless-sea-40851.herokuapp.com/profile`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(profile),
     })
@@ -58,14 +64,14 @@ const ProfileModal = () => {
             <input
               type="text"
               name="name"
-              value={user.displayName}
+              value={user?.displayName}
               disabled
               className="input input-bordered input-primary w-full max-w-xs mb-2"
             />
             <input
               type="email"
               name="email"
-              value={user.email}
+              value={user?.email}
               disabled
               className="input input-bordered input-primary w-full max-w-xs mb-2"
             />

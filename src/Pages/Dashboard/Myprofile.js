@@ -39,25 +39,21 @@ const Myprofile = () => {
               </div>
               <div className="mb-4">
                 <p className="font-medium text-gray-600">Education</p>
-                <h2 className="text-left text-lg font-medium">
-                  University Of Global Village
-                </h2>
+                <h2 className="text-left text-lg font-medium">{}</h2>
               </div>
               <div className="mb-4">
                 <p className="text-lg font-medium text-gray-600">Address</p>
-                <h2 className="text-left text-xl font-medium">Barisal</h2>
+                <h2 className="text-left text-xl font-medium">{}</h2>
               </div>
               <div className="mb-4">
                 <p className="font-medium text-gray-600">Phone</p>
-                <h2 className="text-left text-lg font-medium">019432835</h2>
+                <h2 className="text-left text-lg font-medium">{}</h2>
               </div>
               <div className="mb-4">
                 <p className="font-medium text-gray-600">
                   LinkedIn Profile Link
                 </p>
-                <h2 className="text-left text-lg font-medium">
-                  https//:ajkfififeiee
-                </h2>
+                <h2 className="text-left text-lg font-medium">{}</h2>
               </div>
             </div>
           </div>

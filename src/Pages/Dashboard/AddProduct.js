@@ -24,7 +24,7 @@ const AddProduct = () => {
     fetch("https://limitless-sea-40851.herokuapp.com/parts", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(addParts),
     })

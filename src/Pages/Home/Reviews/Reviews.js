@@ -19,6 +19,9 @@ const Reviews = () => {
 
   return (
     <div className="container mx-auto px-20">
+      <h2 className="text-center text-blue-600 text-4xl font-bold py-4">
+        Our Happy Customer Say!!
+      </h2>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
