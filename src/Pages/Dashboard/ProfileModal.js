@@ -23,17 +23,17 @@ const ProfileModal = () => {
       phone,
     };
 
-    fetch(`https://limitless-sea-40851.herokuapp.com/profile`, {
+    const url = `https://limitless-sea-40851.herokuapp.com/profile/${user.email}`;
+
+    fetch(url, {
       method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify(profile),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast("Update Your Profile");
+        toast("update profile");
       });
   };
 
