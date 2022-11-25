@@ -9,19 +9,18 @@ import "react-toastify/dist/ReactToastify.css";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Parts from "./Pages/Home/Parts/Parts";
 import Purchase from "./Pages/Home/Purchase/Purchase";
-import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Myorders from "./Pages/Dashboard/Myorders";
 import Addreview from "./Pages/Dashboard/Addreview";
 import Notfound from "./Pages/Notfound/Notfound";
 import Blog from "./Pages/Blog/Blog";
 import Users from "./Pages/Dashboard/Users";
-import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
 import Myprofile from "./Pages/Dashboard/Myprofile";
 import Payment from "./Pages/Dashboard/Payment";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import ManageAllOrder from "./Pages/Dashboard/ManageAllOrder";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
+import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -39,7 +38,6 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
         <Route
           path="/dashboard"
           element={
@@ -62,14 +60,7 @@ function App() {
 
           <Route path="myprofile" element={<Myprofile></Myprofile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
-          <Route
-            path="users"
-            element={
-              <RequireAdmin>
-                <Users></Users>
-              </RequireAdmin>
-            }
-          ></Route>
+          <Route path="users" element={<Users></Users>}></Route>
         </Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>

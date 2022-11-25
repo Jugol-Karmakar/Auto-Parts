@@ -4,7 +4,7 @@ const useParts = () => {
   const [parts, setParts] = useState([]);
 
   useEffect(() => {
-    fetch("https://limitless-sea-40851.herokuapp.com/parts")
+    fetch("http://localhost:5000/parts")
       .then((res) => res.json())
       .then((data) => setParts(data));
   }, []);

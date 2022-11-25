@@ -8,22 +8,16 @@ const Users = () => {
     data: users,
     isLoading,
     refetch,
-  } = useQuery("users", () =>
-    fetch("https://limitless-sea-40851.herokuapp.com/user", {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => res.json())
+  } = useQuery("user", () =>
+    fetch("http://localhost:5000/user").then((res) => res.json())
   );
   if (isLoading) {
-    return <Loading />;
+    return <Loading></Loading>;
   }
-
   return (
     <div>
       <h2 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
-        All Users : {users.length}
+        All Users
       </h2>
       <div className="overflow-x-auto mx-4 my-6">
         <table className="table w-full">

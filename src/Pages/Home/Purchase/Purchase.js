@@ -12,7 +12,7 @@ const Purchase = () => {
   const [purchase, setPurchase] = useState({});
 
   useEffect(() => {
-    const url = `https://limitless-sea-40851.herokuapp.com/parts/${id}`;
+    const url = `http://localhost:5000/parts/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPurchase(data));
@@ -39,7 +39,7 @@ const Purchase = () => {
       quantity,
     };
 
-    fetch("https://limitless-sea-40851.herokuapp.com/booking", {
+    fetch("http://localhost:5000/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -114,14 +114,14 @@ const Purchase = () => {
               name="address"
               placeholder="Address"
               required
-              className="input input-bordered input-primary w-full mb-6"
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg  rounded-xl mb-4 px-6 py-3"
             />
             <input
               type="text"
               name="phone"
               placeholder="Phone Number"
               required
-              className="input input-bordered input-primary w-full mb-6"
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg  rounded-xl mb-4 px-6 py-3"
             />
             <input
               type="text"
@@ -129,7 +129,7 @@ const Purchase = () => {
               placeholder="Quantity"
               min={10}
               max={20}
-              className="input input-bordered input-primary w-full mb-6"
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg  rounded-xl mb-4 px-6 py-3"
             />
             <input
               type="submit"

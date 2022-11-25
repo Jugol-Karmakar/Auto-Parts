@@ -12,7 +12,7 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="hero-overlay bg-opacity-70"></div>
+      <div className="hero-overlay bg-opacity-30"></div>
       <div className="hero-content justify-self-start  px-10">
         <div className="text-left max-w-3xl">
           <h1 className="mb-5 text-5xl font-bold text-white">

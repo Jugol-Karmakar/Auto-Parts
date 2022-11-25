@@ -4,13 +4,13 @@ import {
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import { FcGoogle } from "react-icons/fc";
-import { toast } from "react-toastify";
 import Loading from "../../Shared/Loading/Loading";
-import useToken from "../../../Hooks/useToken";
 
 const SignUp = () => {
   const {
@@ -18,18 +18,15 @@ const SignUp = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  let errorMessage;
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
-  const [token] = useToken(user || gUser);
-
   const navigate = useNavigate();
-  let signInError;
 
-  if (token) {
+  if (user || gUser) {
     navigate("/");
   }
 
@@ -38,8 +35,8 @@ const SignUp = () => {
   }
 
   if (error || gError || updateError) {
-    signInError = (
-      <p className="text-red-600">
+    errorMessage = (
+      <p className="text-red-600 pb-2">
         <small>{error?.message || updateError?.message}</small>
       </p>
     );
@@ -160,8 +157,7 @@ const SignUp = () => {
                   )}
                 </label>
               </div>
-              {signInError}
-
+              {errorMessage}
               <input
                 type="submit"
                 value="SignUp"

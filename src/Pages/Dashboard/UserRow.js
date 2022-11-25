@@ -6,24 +6,34 @@ const UserRow = ({ user, refetch }) => {
   const { email, role } = user;
 
   const makeAdmin = () => {
-    fetch(`https://limitless-sea-40851.herokuapp.com/user/admin/${email}`, {
+    fetch(`http://localhost:5000/user/admin/${email}`, {
       method: "PUT",
       headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        "content-type": "application/json",
       },
     })
-      .then((res) => {
-        if (res.status === 403) {
-          toast.error("Failed to Make Admin");
-        }
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
           refetch();
           toast.success("Admin Make Successfully !!");
         }
       });
+    // fetch(`http://localhost:5000/user/admin/${email}`, {
+    //   method: "PUT",
+    // })
+    //   .then((res) => {
+    //     if (res.status === 403) {
+    //       toast.error("Failed to Make Admin");
+    //     }
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     if (data.modifiedCount > 0) {
+    //       refetch();
+    //       toast.success("Admin Make Successfully !!");
+    //     }
+    //   });
   };
 
   return (

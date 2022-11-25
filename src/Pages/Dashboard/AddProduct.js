@@ -21,7 +21,7 @@ const AddProduct = () => {
       description,
     };
 
-    fetch("https://limitless-sea-40851.herokuapp.com/parts", {
+    fetch("http://localhost:5000//parts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -40,52 +40,59 @@ const AddProduct = () => {
       <h1 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
         Add Product
       </h1>
-      <div className="max-w-md mx-auto bg-white p-10 rounded-2xl my-6">
-        <form onSubmit={handelAddproduct} className="flex flex-col">
+      <div className="max-w-xl mx-auto bg-white px-10 py-14 rounded-2xl my-6">
+        <form
+          onSubmit={handelAddproduct}
+          className="flex flex-col items-center"
+        >
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="Product Name"
             required
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
+            className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg mx-14 rounded-xl mb-4 px-6 py-3"
           />
-          <input
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
-            type="text"
-            name="image"
-            required
-            placeholder="Product Image"
-          />
-          <input
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
-            type="text"
-            name="price"
-            required
-            placeholder="Price"
-          />
-          <input
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
-            type="text"
-            name="available"
-            required
-            placeholder="Available Product"
-          />
-          <input
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
-            type="text"
-            name="order"
-            required
-            placeholder="Order Product"
-          />
+          <div className="flex">
+            <input
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-xs mr-4 rounded-xl mb-4 px-6 py-3"
+              type="text"
+              name="image"
+              required
+              placeholder="Product Image"
+            />
+            <input
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-xs ml-4 rounded-xl mb-4 px-6 py-3"
+              type="text"
+              name="price"
+              required
+              placeholder="Product Price"
+            />
+          </div>
+          <div className="flex">
+            <input
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-xs mr-4 rounded-xl mb-4 px-6 py-3"
+              type="text"
+              name="available"
+              required
+              placeholder="Available Product"
+            />
+            <input
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-xs ml-4 rounded-xl mb-4 px-6 py-3"
+              type="text"
+              name="order"
+              required
+              placeholder="Minimum Order"
+            />
+          </div>
           <textarea
             type="text"
             name="description"
             required
-            className="textarea textarea-primary mb-4"
+            className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg mx-14 rounded-xl mb-4 px-6 py-3"
             placeholder="Product Description"
           ></textarea>
           <input
-            className="bg-blue-600 rounded-lg font-semibold text-white cursor-pointer py-3"
+            className="bg-blue-600 rounded-lg font-semibold text-white cursor-pointer py-3 w-full max-w-lg"
             type="submit"
             value="Add Product"
           />

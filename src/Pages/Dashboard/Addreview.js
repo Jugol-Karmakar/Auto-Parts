@@ -1,5 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
+import review from "../../images/write.webp";
 
 const Addreview = () => {
   const handelAddReview = (e) => {
@@ -19,7 +20,7 @@ const Addreview = () => {
       review,
     };
 
-    fetch("https://limitless-sea-40851.herokuapp.com/review", {
+    fetch("http://localhost:5000/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,45 +39,47 @@ const Addreview = () => {
       <h2 className="text-4xl font-bold m-6 border-b-2 border-blue-600 pb-4">
         Add a Review
       </h2>
-      <div className="max-w-sm mx-auto bg-white p-10 rounded-2xl my-5">
-        <form onSubmit={handelAddReview} className="flex flex-col">
+      <div className="max-w-xl mx-auto bg-white px-10 py-14 rounded-2xl my-6">
+        <form onSubmit={handelAddReview} className="flex flex-col items-center">
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="Your Name"
             required
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
+            className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg mx-14 rounded-xl mb-4 px-6 py-3"
           />
+          <div className="flex">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Profession"
+              required
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-xs mr-4 rounded-xl mb-4 px-6 py-3"
+            />
+            <input
+              className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-xs ml-4 rounded-xl mb-4 px-6 py-3"
+              type="email"
+              name="email"
+              required
+              placeholder="Email Address"
+            />
+          </div>
           <input
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
-            type="email"
-            name="email"
-            required
-            placeholder="Email Address"
-          />
-          <input
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
+            className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg mx-14 rounded-xl mb-4 px-6 py-3"
             type="text"
             name="image"
             required
-            placeholder="image"
-          />
-          <input
-            className="input input-bordered input-primary w-full max-w-sm mb-4"
-            type="text"
-            name="rating"
-            required
-            placeholder="Rating"
+            placeholder="Your Image Url"
           />
           <textarea
             type="text"
             name="review"
             required
-            className="textarea textarea-primary mb-4"
-            placeholder="Review"
+            className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg mx-14 rounded-xl mb-4 px-6 py-3"
+            placeholder="Write Review"
           ></textarea>
           <input
-            className="bg-blue-600 rounded-lg font-semibold text-white cursor-pointer py-3"
+            className="bg-blue-600 rounded-lg font-semibold text-white cursor-pointer py-3 w-full max-w-lg"
             type="submit"
             value="Add Review"
           />

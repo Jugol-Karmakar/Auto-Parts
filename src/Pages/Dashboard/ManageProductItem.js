@@ -10,7 +10,7 @@ const ManageProductItem = ({ part }) => {
   const handelDeleteItem = (id) => {
     const sure = window.confirm("Are you sure want to delete?");
     if (sure) {
-      const url = `https://limitless-sea-40851.herokuapp.com/parts/${_id}`;
+      const url = `http://localhost:5000//parts/${_id}`;
       fetch(url, {
         method: "DELETE",
       })

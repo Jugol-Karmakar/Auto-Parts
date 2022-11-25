@@ -12,7 +12,7 @@ import Rating from "../../Shared/Rating/Rating";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://limitless-sea-40851.herokuapp.com/review")
+    fetch("http://localhost:5000/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -43,6 +43,7 @@ const Reviews = () => {
                   <img
                     className="w-full h-full object-cover rounded-full border-2 border-blue-600"
                     src={review.image}
+                    alt=""
                   />
                 </div>
               </div>

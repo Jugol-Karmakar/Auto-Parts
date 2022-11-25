@@ -1,4 +1,3 @@
-import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,23 +10,10 @@ const Myorders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(
-        `https://limitless-sea-40851.herokuapp.com/booking?email=${user.email}`,
-        {
-          method: "GET",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        }
-      )
-        .then((res) => {
-          if (res.status === 401 || res.status === 403) {
-            signOut(auth);
-            localStorage.removeItem("accessToken");
-            navigate("/");
-          }
-          return res.json();
-        })
+      fetch(`http://localhost:5000/booking?email=${user.email}`, {
+        method: "GET",
+      })
+        .then((res) => res.json())
         .then((data) => {
           setBooking(data);
         });

@@ -20,7 +20,7 @@ const Contact = () => {
             <form>
               <div className="mb-3">
                 <input
-                  className="py-2 px-2 outline-none rounded-md border-grey-400 border  w-full"
+                  className="border border-ble-600 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg rounded-xl px-6 py-3"
                   type="text"
                   name="name"
                   id=""
@@ -30,7 +30,7 @@ const Contact = () => {
               </div>
               <div className="my-3">
                 <input
-                  className="py-2 px-2 outline-none rounded-md border-grey-400 border  w-full"
+                  className="border border-ble-600 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg rounded-xl px-6 py-3"
                   type="email"
                   name="email"
                   id=""
@@ -40,9 +40,7 @@ const Contact = () => {
               </div>
               <div className="my-3">
                 <input
-                  className="py-2 px-2 outline-none rounded-md border-grey-400 
-            border 
-             w-full"
+                  className="border border-ble-600 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg rounded-xl px-6 py-3"
                   type="text"
                   name="address"
                   id=""
@@ -52,9 +50,7 @@ const Contact = () => {
               </div>
               <div className="my-3">
                 <input
-                  className="py-2 px-2 outline-none rounded-md border-grey-400 
-            border 
-             w-full"
+                  className="border border-ble-600 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg rounded-xl px-6 py-3"
                   type="text"
                   name="phone"
                   id=""
@@ -64,11 +60,11 @@ const Contact = () => {
               </div>
               <div className="my-3">
                 <textarea
-                  className="py-2 px-2 outline-none rounded-md border-grey-400 border w-full"
+                  className="border border-ble-600 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg rounded-xl px-6 py-3"
                   name=""
                   id=""
                   cols="30"
-                  rows="6"
+                  rows="5"
                   placeholder="Message"
                 ></textarea>
               </div>

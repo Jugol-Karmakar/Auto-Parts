@@ -12,15 +12,14 @@ const Header = () => {
 
   const handelLogOut = () => {
     signOut(auth);
-    localStorage.removeItem("accessToken");
     toast("Log Out Successfully!!");
   };
 
   return (
     <div className="w-full px-10 flex justify-between items-center bg-white py-3 lg:py-0 shadow-lg">
       <div>
-        <h1 className="text-3xl font-black">
-          <span className="text-[#0989f1]">Auto</span>Parts
+        <h1 className="text-3xl font-extrabold">
+          <span className="text-[#0989f1]">AUTO</span>PARTS
         </h1>
       </div>
       <button className="z-40 block lg:hidden" onClick={() => setOpen(!open)}>
@@ -36,37 +35,30 @@ const Header = () => {
         } w-1/2 lg:w-auto bg-white shadow-lg lg:shadow-none lg:static h-screen lg:h-auto  transition-all duration-300`}
       >
         <CustomLink
-          className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
+          className="my-5 mr-4 inline-block px-3 text-lg font-semibold"
           to="/"
         >
           Home
         </CustomLink>
         <CustomLink
-          className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
+          className="my-5 mr-4 inline-block px-3 text-lg font-semibold"
           to="/blog"
         >
-          blog
-        </CustomLink>
-        <CustomLink
-          className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
-          to="/portfolio"
-        >
-          Portfolio
+          Blog
         </CustomLink>
 
-        {user && (
-          <CustomLink
-            className="my-5 mr-5 inline-block px-3 text-lg font-semibold"
-            to="/dashboard"
-          >
-            Dashboard
-          </CustomLink>
-        )}
+        <CustomLink
+          className="my-5 mr-4 inline-block px-3 text-lg font-semibold"
+          to="/dashboard"
+        >
+          Dashboard
+        </CustomLink>
+
         {/* {user && <h1>{user?.displayName}</h1>} */}
         {user ? (
           <button
             onClick={handelLogOut}
-            className="my-5 mr-5 flex items-center px-6 text-blue-600 text-lg font-semibold border border-blue-600 hover:bg-blue-700 hover:text-white py-2 rounded-full "
+            className="my-5 mr-5 flex items-center px-6 text-blue-600 text-lg font-semibold border border-blue-600 hover:bg-blue-700 hover:text-white transition-all duration-300 py-2 rounded-full "
           >
             <FaSignOutAlt className="mr-2" />
             Log Out

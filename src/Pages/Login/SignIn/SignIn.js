@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import Loading from "../../Shared/Loading/Loading";
-import { FcGoogle } from "react-icons/fc";
-import auth from "../../../firebase.init";
+import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import useToken from "../../../Hooks/useToken";
+import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
+import { FcGoogle } from "react-icons/fc";
 
 const SignIn = () => {
   const {
@@ -20,44 +19,37 @@ const SignIn = () => {
     handleSubmit,
   } = useForm();
 
+  let errorMessage;
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
 
-  const [token] = useToken(user || gUser);
-
-  let signInError;
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    if (token) {
-      navigate(from, { replace: true });
-    }
-  }, [token, from, navigate]);
-
-  if (user) {
-  }
-
-  if (loading || gLoading) {
-    return <Loading />;
-  }
-
-  if (error || gError) {
-    signInError = (
-      <p className="text-red-600">
+  if ((error, gError)) {
+    errorMessage = (
+      <p className="text-red-600 pb-2">
         <small>{error?.message}</small>
       </p>
     );
   }
+  if (loading || gLoading) {
+    return <Loading />;
+  }
+
+  if (user || gUser) {
+    navigate(from, { replace: true });
+  }
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
-    toast("Sign In Successfully!!");
+    toast("Sign in Successfully!!");
   };
 
   const resetPassword = () => {
@@ -150,8 +142,7 @@ const SignIn = () => {
                   )}
                 </label>
               </div>
-              {signInError}
-
+              {errorMessage}
               <input
                 type="submit"
                 value="SignIn"
