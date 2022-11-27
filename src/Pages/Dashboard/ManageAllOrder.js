@@ -10,19 +10,10 @@ const Myorders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000//booking?email=${user.email}`, {
+      fetch(`http://localhost:5000/booking?email=${user.email}`, {
         method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
       })
-        .then((res) => {
-          if (res.status === 401 || res.status === 403) {
-            localStorage.removeItem("accessToken");
-            navigate("/");
-          }
-          return res.json();
-        })
+        .then((res) => res.json())
         .then((data) => {
           setBooking(data);
         });
@@ -45,7 +36,7 @@ const Myorders = () => {
               <th>Address</th>
               <th>Quantity</th>
               <th>Payment</th>
-              <th>Cancel</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -69,6 +60,18 @@ const Myorders = () => {
                   )}
                   {book.price && book.paid && (
                     <p className="font-bold text-green-600">Paid</p>
+                  )}
+                </td>
+                <td className="text-purple-500 font-semibold">
+                  {book.price && !book.paid && (
+                    <button className="btn btn-xs bg-red-700 border-0">
+                      Cancel
+                    </button>
+                  )}
+                  {book.price && book.paid && (
+                    <button className="btn btn-xs bg-green-600 border-0">
+                      Shipped
+                    </button>
                   )}
                 </td>
               </tr>

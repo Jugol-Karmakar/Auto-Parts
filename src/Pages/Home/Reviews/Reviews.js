@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./Review.css";
-import Rating from "../../Shared/Rating/Rating";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -52,10 +51,9 @@ const Reviews = () => {
                 <p className="text-sm text-gray-700 font-medium">
                   {review.review}
                 </p>
-                <div>
-                  <Rating />
-                </div>
+
                 <h2 className="text-center text-lg font-bold">{review.name}</h2>
+                <h2 className="text-center font-bold">{review.profession}</h2>
                 <p className="tex-sm font-bold text-gray-600">{review.email}</p>
               </div>
             </div>

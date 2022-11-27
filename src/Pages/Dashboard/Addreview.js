@@ -1,22 +1,21 @@
 import React from "react";
 import { toast } from "react-toastify";
-import review from "../../images/write.webp";
 
 const Addreview = () => {
   const handelAddReview = (e) => {
     e.preventDefault();
 
     const name = e.target.name.value;
+    const profession = e.target.profession.value;
     const email = e.target.email.value;
     const image = e.target.image.value;
-    const rating = e.target.rating.value;
     const review = e.target.review.value;
 
     const reviews = {
       name,
+      profession,
       email,
       image,
-      rating,
       review,
     };
 
@@ -51,7 +50,7 @@ const Addreview = () => {
           <div className="flex">
             <input
               type="text"
-              name="name"
+              name="profession"
               placeholder="Your Profession"
               required
               className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-xs mr-4 rounded-xl mb-4 px-6 py-3"
