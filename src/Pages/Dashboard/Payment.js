@@ -12,15 +12,10 @@ const stripePromise = loadStripe(
 
 const Payment = () => {
   const { id } = useParams();
-  const url = `http://localhost:5000//booking/${id}`;
+  const url = `http://localhost:5000/booking/${id}`;
 
   const { data: order, isLoading } = useQuery(["booking", id], () =>
-    fetch(url, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => res.json())
+    fetch(url).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -35,21 +30,21 @@ const Payment = () => {
       <div className="mx-10">
         <div className="card w-50 max-w-md bg-base-100 shadow-xl my-8">
           <div className="card-body">
-            <p className="font-bold text-purple-600 text-lg">
-              Hello, {order.name}
+            <p className="font-bold text-gray-700 text-xl">
+              Hello, {order?.name}
             </p>
             <h2 className="text-2xl mb-2">
               Please Pay for{" "}
-              <span className="text-blue-600 font-bold">{order.product}</span>
+              <span className="text-blue-600 font-bold">{order?.product}</span>
             </h2>
             <p className="text-lg font-bold mb-2">
-              Your Qunatity : {order.quantity}
+              Your Qunatity : {order?.quantity}
             </p>
             <p className="text-lg font-bold mb-2">
               Total Price :{" "}
               <span className="text-orange-500">
                 {" "}
-                {parseInt(order.quantity) * parseInt(order.price)}
+                {parseInt(order?.quantity) * parseInt(order?.price)}
               </span>
             </p>
           </div>

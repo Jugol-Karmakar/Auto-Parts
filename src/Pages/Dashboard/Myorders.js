@@ -8,6 +8,8 @@ const Myorders = () => {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
+  console.log(bookings);
+
   useEffect(() => {
     if (user) {
       fetch(`http://localhost:5000/booking?email=${user.email}`, {
@@ -18,7 +20,7 @@ const Myorders = () => {
           setBooking(data);
         });
     }
-  }, []);
+  }, [user]);
 
   return (
     <div>

@@ -11,6 +11,7 @@ const Users = () => {
   } = useQuery("user", () =>
     fetch("http://localhost:5000/user").then((res) => res.json())
   );
+
   if (isLoading) {
     return <Loading></Loading>;
   }

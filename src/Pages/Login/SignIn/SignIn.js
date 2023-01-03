@@ -10,6 +10,8 @@ import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import { FcGoogle } from "react-icons/fc";
+import useToken from "../../../Hooks/useToken";
+import { useEffect } from "react";
 
 const SignIn = () => {
   const {
@@ -27,10 +29,22 @@ const SignIn = () => {
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
 
+  const [token] = useToken(user || gUser);
+
   const navigate = useNavigate();
   const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate, token]);
+
+  if (loading || gLoading) {
+    return <Loading />;
+  }
 
   if ((error, gError)) {
     errorMessage = (
@@ -39,15 +53,9 @@ const SignIn = () => {
       </p>
     );
   }
-  if (loading || gLoading) {
-    return <Loading />;
-  }
-
-  if (user || gUser) {
-    navigate(from, { replace: true });
-  }
 
   const onSubmit = (data) => {
+    console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
     toast("Sign in Successfully!!");
   };

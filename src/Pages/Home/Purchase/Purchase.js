@@ -4,41 +4,47 @@ import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 
 const Purchase = () => {
+  const [purchase, setPurchase] = useState({});
   const { id } = useParams();
   const [user, loading] = useAuthState(auth);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    criteriaMode: "all",
+    defaultValues: {
+      name: "",
+      email: "",
+      product: "",
+    },
+  });
 
-  const [purchase, setPurchase] = useState({});
+  // console.log(purchase.name);
 
   useEffect(() => {
     const url = `http://localhost:5000/parts/${id}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setPurchase(data));
-  }, []);
+      .then((data) => {
+        const defaults = {
+          name: user.displayName,
+          email: user.email,
+          product: data.name,
+        };
+        setPurchase(data);
+        reset(defaults);
+      });
+  }, [id, user.displayName, user.email, reset]);
 
-  // product booking
-  const handelBookngSubmit = (e) => {
-    e.preventDefault();
-    const name = user?.displayName;
-    const email = user?.email;
-    const product = purchase.name;
-    const price = purchase.price;
-    const address = e.target.address.value;
-    const phone = e.target.phone.value;
-    const quantity = e.target.quantity.value;
-
-    const booking = {
-      name,
-      email,
-      product,
-      price,
-      address,
-      phone,
-      quantity,
-    };
-
+  const onSubmit = (object) => {
+    const booking = object;
+    console.log(object);
     fetch("http://localhost:5000/booking", {
       method: "POST",
       headers: {
@@ -49,9 +55,44 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast(`${product} purchase Successfully Done!!`);
+        toast(`${object.product} purchase Successfully Done!!`);
       });
   };
+
+  // product booking
+  // const handelBookngSubmit = (e) => {
+  //   e.preventDefault();
+  //   const name = user?.displayName;
+  //   const email = user?.email;
+  //   const product = purchase.name;
+  //   const price = purchase.price;
+  //   const address = e.target.address.value;
+  //   const phone = e.target.phone.value;
+  //   const quantity = e.target.quantity.value;
+
+  //   const booking = {
+  //     name,
+  //     email,
+  //     product,
+  //     price,
+  //     address,
+  //     phone,
+  //     quantity,
+  //   };
+
+  //   fetch("http://localhost:5000/booking", {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(booking),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       toast(`${product} purchase Successfully Done!!`);
+  //     });
+  // };
 
   return (
     <div className="w-full bg-[#dfe2f7] ">
@@ -86,50 +127,101 @@ const Purchase = () => {
         </div>
         <div className="shadow-lg overflow-hidden rounded-lg max-w-md bg-white mt-6 lg:mt-0">
           <h2 className="text-center text-2xl py-3 font-bold">Purchase Now</h2>
-          <form onSubmit={handelBookngSubmit} className="mt-4 mx-10">
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-4 mx-10">
             <input
+              {...register("name")}
               type="text"
-              name="name"
-              value={user?.displayName}
               disabled
               className="input input-bordered input-primary w-full mb-6"
             />
 
             <input
+              {...register("email")}
               type="email"
-              name="email"
-              value={user?.email}
               disabled
               className="input input-bordered input-primary w-full mb-6"
             />
             <input
+              {...register("product")}
               type="text"
-              name="product"
-              value={purchase.name}
               disabled
               className="input input-bordered input-primary w-full mb-6"
             />
             <input
+              {...register("address", {
+                required: "address is required.",
+                pattern: {
+                  value: /[A-Za-z]/,
+                  message: "Number is not a address.",
+                },
+              })}
               type="text"
-              name="address"
               placeholder="Address"
-              required
               className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg  rounded-xl mb-4 px-6 py-3"
             />
+            <ErrorMessage
+              errors={errors}
+              name="address"
+              render={({ messages }) =>
+                messages &&
+                Object.entries(messages).map(([type, message]) => (
+                  <p key={type} className="text-red-600">
+                    {message}
+                  </p>
+                ))
+              }
+            />
             <input
+              {...register("number", {
+                required: "Number is required.",
+                pattern: {
+                  value: /[0-9]/,
+                  message: "Alphabet is not a number.",
+                },
+              })}
               type="text"
-              name="phone"
               placeholder="Phone Number"
-              required
               className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg  rounded-xl mb-4 px-6 py-3"
             />
+            <ErrorMessage
+              errors={errors}
+              name="number"
+              render={({ messages }) =>
+                messages &&
+                Object.entries(messages).map(([type, message]) => (
+                  <p key={type} className="text-red-600">
+                    {message}
+                  </p>
+                ))
+              }
+            />
             <input
-              type="text"
-              name="quantity"
+              {...register("quantity", {
+                required: "Quantity is required.",
+                min: {
+                  value: purchase.order,
+                  message: "Order more than minimum order",
+                },
+                max: {
+                  value: purchase.available,
+                  message: "Order less than available product",
+                },
+              })}
+              type="number"
               placeholder="Quantity"
-              min={10}
-              max={20}
               className="border border-gray-400 focus:border-gray-600 focus:shadow-lg outline-none duration-300 transition-all w-full max-w-lg  rounded-xl mb-4 px-6 py-3"
+            />
+            <ErrorMessage
+              errors={errors}
+              name="quantity"
+              render={({ messages }) =>
+                messages &&
+                Object.entries(messages).map(([type, message]) => (
+                  <p key={type} className="text-red-600">
+                    {message}
+                  </p>
+                ))
+              }
             />
             <input
               type="submit"

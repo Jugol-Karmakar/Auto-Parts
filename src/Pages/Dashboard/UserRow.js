@@ -36,6 +36,25 @@ const UserRow = ({ user, refetch }) => {
     //   });
   };
 
+  const handleDeleteUser = () => {
+    const sure = window.confirm("Are you sure want to delete user?");
+    if (sure) {
+      fetch(`http://localhost:5000/user/${email}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            refetch();
+            toast.success("user delete Successfully !!");
+          }
+        });
+    }
+  };
+
   return (
     <tr>
       <th>
@@ -55,7 +74,12 @@ const UserRow = ({ user, refetch }) => {
         )}
       </td>
       <td>
-        <button className="btn btn-xs bg-red-700 border-0">Delete User</button>
+        <button
+          onClick={handleDeleteUser}
+          className="btn btn-xs bg-red-700 border-0"
+        >
+          Delete User
+        </button>
       </td>
     </tr>
   );

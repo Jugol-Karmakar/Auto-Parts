@@ -15,7 +15,6 @@ const CheckoutForm = ({ order }) => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify({ price }),
     })
@@ -71,7 +70,7 @@ const CheckoutForm = ({ order }) => {
         transaction: paymentIntent.id,
       };
 
-      fetch(`http://localhost:5000//booking/${_id}`, {
+      fetch(`http://localhost:5000/booking/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
