@@ -30,7 +30,7 @@ const Purchase = () => {
   // console.log(purchase.name);
 
   useEffect(() => {
-    const url = `http://localhost:5000/parts/${id}`;
+    const url = `https://auto-parts-server-zeta.vercel.app/parts/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -48,7 +48,7 @@ const Purchase = () => {
   const onSubmit = (object) => {
     const booking = object;
     console.log(object);
-    fetch("http://localhost:5000/booking", {
+    fetch("https://auto-parts-server-zeta.vercel.app/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -83,7 +83,7 @@ const Purchase = () => {
   //     quantity,
   //   };
 
-  //   fetch("http://localhost:5000/booking", {
+  //   fetch("https://auto-parts-server-zeta.vercel.app/booking", {
   //     method: "POST",
   //     headers: {
   //       "content-type": "application/json",

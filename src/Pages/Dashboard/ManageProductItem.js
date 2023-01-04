@@ -10,7 +10,7 @@ const ManageProductItem = ({ part }) => {
   const handelDeleteItem = (id) => {
     const sure = window.confirm("Are you sure want to delete?");
     if (sure) {
-      const url = `http://localhost:5000/parts/${_id}`;
+      const url = `https://auto-parts-server-zeta.vercel.app/parts/${_id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -9,7 +9,7 @@ const Myprofile = () => {
   const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://auto-parts-server-zeta.vercel.app/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setCurrentUser(data));
   }, [user.email]);
@@ -34,7 +34,7 @@ const Myprofile = () => {
       link,
     };
 
-    fetch(`http://localhost:5000/users/${user.email}`, {
+    fetch(`https://auto-parts-server-zeta.vercel.app/users/${user.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -10,9 +10,12 @@ const Myorders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/booking?email=${user.email}`, {
-        method: "GET",
-      })
+      fetch(
+        `https://auto-parts-server-zeta.vercel.app/booking?email=${user.email}`,
+        {
+          method: "GET",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setBooking(data);

@@ -21,7 +21,7 @@ const AddProduct = () => {
       description,
     };
 
-    fetch("http://localhost:5000/parts", {
+    fetch("https://auto-parts-server-zeta.vercel.app/parts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -19,7 +19,7 @@ const Addreview = () => {
       review,
     };
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://auto-parts-server-zeta.vercel.app/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

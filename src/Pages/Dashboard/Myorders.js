@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
-import Loading from "../Shared/Loading/Loading";
 
 const Myorders = () => {
   const [bookings, setBooking] = useState([]);
@@ -12,9 +11,12 @@ const Myorders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/booking?email=${user.email}`, {
-        method: "GET",
-      })
+      fetch(
+        `https://auto-parts-server-zeta.vercel.app/booking?email=${user.email}`,
+        {
+          method: "GET",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setBooking(data);
