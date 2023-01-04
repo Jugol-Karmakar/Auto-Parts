@@ -22,7 +22,7 @@ const Part = (props) => {
         </p>
         <p className="text-lg font-bold text-[#fa630b] flex justify-center items-center my-3">
           <HiOutlineCurrencyBangladeshi className=" text-2xl ml-2" /> {price}
-          <span className="text-sky-900 ml-2">(Per Unit)</span>
+          <span className="text-sky-900 ml-2">(Per product)</span>
         </p>
         <p className="text-lg font-bold text-center text-gray-700">
           Available : {available}

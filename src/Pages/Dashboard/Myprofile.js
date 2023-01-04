@@ -12,7 +12,7 @@ const Myprofile = () => {
     fetch(`http://localhost:5000/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setCurrentUser(data));
-  }, []);
+  }, [user.email]);
 
   const handelUpdateProfile = (e) => {
     e.preventDefault();

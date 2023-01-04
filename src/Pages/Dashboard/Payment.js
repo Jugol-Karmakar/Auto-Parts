@@ -5,6 +5,7 @@ import Loading from "../Shared/Loading/Loading";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
+import { HiOutlineCurrencyBangladeshi } from "react-icons/hi";
 
 const stripePromise = loadStripe(
   "pk_test_51L4OinJiEZ0zjbT3fMKkg8gWVdVTutIkqW3A60ZBpvoY840mZYuMdqOZNJaqOYOdhxRZ54RpMcUddPbuLTjgAEV200ddYw7LQW"
@@ -40,10 +41,19 @@ const Payment = () => {
             <p className="text-lg font-bold mb-2">
               Your Qunatity : {order?.quantity}
             </p>
-            <p className="text-lg font-bold mb-2">
+
+            <p className="text-lg font-bold mb-2 flex items-center">
+              Price :
+              <span className="text-[#fa630b] flex items-center px-2">
+                <HiOutlineCurrencyBangladeshi /> {order?.price}
+              </span>
+              (Per product)
+            </p>
+
+            <p className="text-lg font-bold mb-2 flex items-center">
               Total Price :{" "}
-              <span className="text-orange-500">
-                {" "}
+              <span className="text-[#fa630b] flex items-center px-2">
+                <HiOutlineCurrencyBangladeshi />
                 {parseInt(order?.quantity) * parseInt(order?.price)}
               </span>
             </p>

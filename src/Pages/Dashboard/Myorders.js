@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading/Loading";
 
 const Myorders = () => {
   const [bookings, setBooking] = useState([]);
   const [user, loading] = useAuthState(auth);
-  const navigate = useNavigate();
 
   console.log(bookings);
 
@@ -65,11 +65,16 @@ const Myorders = () => {
                   {book.price && book.paid && (
                     <div>
                       <p className="font-bold text-green-600">Paid</p>
-                      <p>{book.transaction}</p>
                     </div>
                   )}
                 </td>
-                <td className="text-purple-500 font-semibold">
+                <td className="text-purple-500 font-semibold pr-3">
+                  {book.price && book.paid && (
+                    <p className="text-sm text-green-600">
+                      <span className="text-black">transactionId :</span> <br />{" "}
+                      {book.transactionId}
+                    </p>
+                  )}
                   {book.price && !book.paid && (
                     <button className="btn btn-xs bg-red-600 border-0">
                       Delete

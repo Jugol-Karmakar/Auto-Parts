@@ -9,6 +9,7 @@ import { ErrorMessage } from "@hookform/error-message";
 
 const Purchase = () => {
   const [purchase, setPurchase] = useState({});
+  console.log(purchase);
   const { id } = useParams();
   const [user, loading] = useAuthState(auth);
   const {
@@ -22,6 +23,7 @@ const Purchase = () => {
       name: "",
       email: "",
       product: "",
+      price: "",
     },
   });
 
@@ -36,11 +38,12 @@ const Purchase = () => {
           name: user.displayName,
           email: user.email,
           product: data.name,
+          price: purchase.price,
         };
         setPurchase(data);
         reset(defaults);
       });
-  }, [id, user.displayName, user.email, reset]);
+  }, [id, purchase.price, user.displayName, user.email, reset]);
 
   const onSubmit = (object) => {
     const booking = object;
@@ -115,7 +118,7 @@ const Purchase = () => {
             <p className="text-lg font-bold text-[#fa630b] flex justify-center items-center my-3">
               <HiOutlineCurrencyBangladeshi className=" text-2xl ml-2" />
               {purchase.price}
-              <span className="text-sky-900 ml-2">(Per Unit)</span>
+              <span className="text-sky-900 ml-2">(Per product)</span>
             </p>
             <p className="text-lg font-bold text-center text-gray-700">
               Available : {purchase.available}
