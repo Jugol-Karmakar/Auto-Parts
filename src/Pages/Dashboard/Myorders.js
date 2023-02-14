@@ -12,7 +12,7 @@ const Myorders = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://auto-parts-server-zeta.vercel.app/booking?email=${user.email}`,
+        `https://auto-parts-server-jdev.onrender.com/booking?email=${user.email}`,
         {
           method: "GET",
         }

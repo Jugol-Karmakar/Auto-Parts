@@ -69,8 +69,9 @@ const Footer = () => {
       <div className="text-center p-6">
         <div>
           <p className="text-sm">
-            Copyright © {year} - All right reserved.{" "}
-            <strong className="text-green-600">Auto Parts</strong>
+            Copyright © {year}{" "}
+            <strong className="text-red-600">Auto Parts</strong>. All right
+            reserved.
           </p>
         </div>
       </div>

@@ -9,7 +9,7 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("user", () =>
-    fetch("https://auto-parts-server-zeta.vercel.app/user").then((res) =>
+    fetch("https://auto-parts-server-jdev.onrender.com/user").then((res) =>
       res.json()
     )
   );

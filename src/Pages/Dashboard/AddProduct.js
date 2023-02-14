@@ -21,7 +21,7 @@ const AddProduct = () => {
       description,
     };
 
-    fetch("https://auto-parts-server-zeta.vercel.app/parts", {
+    fetch("https://auto-parts-server-jdev.onrender.com/parts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

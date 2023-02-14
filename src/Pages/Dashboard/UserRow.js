@@ -6,7 +6,7 @@ const UserRow = ({ user, refetch }) => {
   const { email, role } = user;
 
   const makeAdmin = () => {
-    fetch(`https://auto-parts-server-zeta.vercel.app/user/admin/${email}`, {
+    fetch(`https://auto-parts-server-jdev.onrender.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -19,7 +19,7 @@ const UserRow = ({ user, refetch }) => {
           toast.success("Admin Make Successfully !!");
         }
       });
-    // fetch(`https://auto-parts-server-zeta.vercel.app/user/admin/${email}`, {
+    // fetch(`https://auto-parts-server-jdev.onrender.com/user/admin/${email}`, {
     //   method: "PUT",
     // })
     //   .then((res) => {
@@ -39,7 +39,7 @@ const UserRow = ({ user, refetch }) => {
   const handleDeleteUser = () => {
     const sure = window.confirm("Are you sure want to delete user?");
     if (sure) {
-      fetch(`https://auto-parts-server-zeta.vercel.app/user/${email}`, {
+      fetch(`https://auto-parts-server-jdev.onrender.com/user/${email}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",

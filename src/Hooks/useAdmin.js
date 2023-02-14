@@ -7,7 +7,7 @@ const useAdmin = (user) => {
     const email = user?.email;
     console.log(email);
     if (email) {
-      fetch(`https://auto-parts-server-zeta.vercel.app//admin/${email}`, {
+      fetch(`https://auto-parts-server-jdev.onrender.com//admin/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",

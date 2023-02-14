@@ -11,7 +11,7 @@ import "./Review.css";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://auto-parts-server-zeta.vercel.app/review")
+    fetch("https://auto-parts-server-jdev.onrender.com/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

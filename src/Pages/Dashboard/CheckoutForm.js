@@ -11,7 +11,7 @@ const CheckoutForm = ({ order }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("https://auto-parts-server-zeta.vercel.app/create-payment-intent", {
+    fetch("https://auto-parts-server-jdev.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -70,7 +70,7 @@ const CheckoutForm = ({ order }) => {
         transaction: paymentIntent.id,
       };
 
-      fetch(`https://auto-parts-server-zeta.vercel.app/booking/${_id}`, {
+      fetch(`https://auto-parts-server-jdev.onrender.com/booking/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
